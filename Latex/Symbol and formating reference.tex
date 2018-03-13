@@ -1,0 +1,218 @@
+\documentclass[12pt]{article}
+\usepackage{mathrsfs}
+\usepackage{mathabx}
+\usepackage[top=.9in, bottom=.9in, left=1.5in, right=1.5in]{geometry}
+\usepackage{pbox}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\begin{figure}[h]
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+	
+	%the box
+	\draw[ultra thick] (-.2,5) -- (13,5);
+	\draw[ultra thick] (-.2,5) -- (-.2,0);
+	\draw[ultra thick] (-.2,0) -- (13,0);
+	\draw[ultra thick] (13,5) -- (13,0);
+
+	%emmiters and edges from E to Path
+	\draw[] (6,1) -- (6.3,-1);
+	\draw[] (6,1) -- (6,-1);
+	\draw[] (6,1) -- (5.7,-1);
+	\node[fill=white] (A) at (6,1) {$e_0$};
+
+	\draw[] (8,1) -- (8.3,-1);
+	\draw[] (8,1) -- (8,-1);
+	\draw[] (8,1) -- (7.7,-1);
+	\node [fill=white] (B) at (8,1) {$e_1$};
+	
+	\draw[] (10,1) -- (10.3,-1);
+	\draw[] (10,1) -- (10,-1);
+	\draw[] (10,1) -- (9.7,-1);
+	\node [fill=white](C) at (10,1) {$e_2$};
+	
+	\draw[] (12,1) -- (12.3,-1);
+	\draw[] (12,1) -- (12,-1);
+	\draw[] (12,1) -- (11.7,-1);
+	\node [fill=white](D) at (12,1) {$e_3$};
+	
+	%Collectors and edges from C to Support
+	\draw[] (6,4) -- (5.6,6);
+	\draw[] (6,4) -- (5.8,6);
+	\draw[] (6,4) -- (6,6);
+	\draw[] (6,4) -- (6.2,6);
+	\draw[] (6,4) -- (6.4,6);
+	\node [fill=white] (A1) at (6,4) {$c_0$};
+
+	\draw[] (8,4) -- (7.6,6);
+	\draw[] (8,4) -- (7.8,6);
+	\draw[] (8,4) -- (8,6);
+	\draw[] (8,4) -- (8.2,6);
+	\draw[] (8,4) -- (8.4,6);
+	\node [fill=white] (B1) at (8,4) {$c_1$};
+
+	\draw[] (10,4) -- (9.6,6);
+	\draw[] (10,4) -- (9.8,6);
+	\draw[] (10,4) -- (10,6);
+	\draw[] (10,4) -- (10.2,6);
+	\draw[] (10,4) -- (10.4,6);
+	\node [fill=white](C1) at (10,4) {$c_2$};
+
+	\draw[] (12,4) -- (11.6,6);
+	\draw[] (12,4) -- (11.8,6);
+	\draw[] (12,4) -- (12,6);
+	\draw[] (12,4) -- (12.2,6);
+	\draw[] (12,4) -- (12.4,6);
+	\node [fill=white](D1) at (12,4) {$c_3$};
+
+	%Base with edges to support and initializers
+	\draw[] (1,2) -- (1.2,6);
+	\draw[] (1,2) -- (0.8,6);
+	\draw[] (1,2) -- (0.2,-.6);
+	\draw[] (1,2) -- (1.6,-1);
+	\node [fill=white] (E) at (1,2) {$a_0$};
+	
+	\draw[] (3.5,2) -- (2.7,6);
+	\draw[] (3.5,2) -- (3.1,6);
+	\draw[] (3.5,2) -- (3.5,6);
+	\draw[] (3.5,2) -- (3.9,6);
+	\draw[] (3.5,2) -- (4.3,6);
+	\node [fill=white] (F) at (3.5,2) {$a_1$};
+
+
+\end{scope}
+
+
+%word "Transistor"
+\begin{scope}[every node/.style={rectangle, draw = none}]
+\node [rotate=90,anchor=north,outer sep=-4pt](Transistor) at (-0.6, 2.5) {Transistor};
+\end{scope}
+
+\begin{scope}[every node/.style={ellipse, minimum width=7cm, draw}]
+	
+	\draw[] (9,7.5) -- (9,6);
+	\draw[] (9.5,7.5) -- (9.5,6);
+	\draw[] (10,7.5) -- (10,6);
+	\draw[] (10.5,7.5) -- (10.5,6);
+	\draw[] (11,7.5) -- (11,6);
+	\draw[] (8.5,7.5) -- (8.5,6);
+	\draw[] (8,7.5) -- (8,6);
+	\draw[] (7.5,7.5) -- (7.5,6);
+	\draw[] (7,7.5) -- (7,6);
+	\draw[] (9.25,7.5) -- (9.25,6);
+	\draw[] (9.75,7.5) -- (9.75,6);
+	\draw[] (10.25,7.5) -- (10.25,6);
+	\draw[] (10.75,7.5) -- (10.75,6);
+	\draw[] (11.25,7.5) -- (11.25,6);
+	\draw[] (8.25,7.5) -- (8.25,6);
+	\draw[] (8.75,7.5) -- (8.75,6);
+	\draw[] (7.25,7.5) -- (7.25,6);
+	\draw[] (7.75,7.5) -- (7.75,6);
+
+	\draw[] (6,7.5) -- (6,6);
+	\draw[] (6.25,7.5) -- (6.25,6);
+	\draw[] (6.5,7.5) -- (6.5,6);
+	\draw[] (6.75,7.5) -- (6.75,6);
+	\draw[] (12,7.5) -- (12,6);
+	\draw[] (12.25,7.5) -- (12.25,6);
+	\draw[] (11.5,7.5) -- (11.5,6);
+	\draw[] (11.75,7.5) -- (11.75,6);
+
+\node [fill=gray](S4) at (9,6) {$R_4$};
+\node [fill=gray](S13) at (9,7.5) {$R'_3$};
+\node [fill=white](P) at (9,-1) {Path $P$};
+
+
+
+\end{scope}
+
+\begin{scope}[every node/.style={ellipse, draw}]
+
+	\draw[] (1.1,7.5) -- (1.1,6);
+	\draw[] (0.9,7.5) -- (.9,6);
+
+\node [fill=gray](S1) at (1,6) {$R_2$};
+\node [fill=gray](S11) at (1,7.5) {$R'_1$};
+\node [fill=gray](S10) at (-.5,7.5) {$R'_0$};
+\node [fill=white](I) at (1.75,-1){$I_0$};
+\node [fill=gray, pattern=north west lines, pattern color = gray,](T) at (0,-1) {$trigger$};
+
+\end{scope}
+
+\begin{scope}[every node/.style={ellipse, minimum width=2cm, draw}]
+
+	\draw[] (2.75,7.5) -- (2.75,6);
+	\draw[] (3.5,7.5) -- (3.5,6);
+	\draw[] (3,7.5) -- (3,6);
+	\draw[] (4,7.5) -- (4,6);
+	\draw[] (3.25,7.5) -- (3.25,6);
+	\draw[] (3.75,7.5) -- (3.75,6);
+	\draw[] (4,7.5) -- (4,6);
+	\draw[] (4.25,7.5) -- (4.25,6);
+
+\node [fill=gray](t4) at (3.5,6) {$R_3$};
+\node [fill=gray](S12) at (3.5,7.5) {$R'_2$};
+\end{scope}
+
+
+\begin{scope}[]
+
+	\path (A)  edge[loop left] node  {} (A);
+	\path (B)  edge[loop left] node  {} (B);
+	\path (C)  edge[loop left] node  {} (C);
+	\path (D)  edge[loop left] node  {} (D);
+
+	\path (A1)  edge[loop left] node  {} (A1);
+	\path (B1)  edge[loop left] node  {} (B1);
+	\path (C1)  edge[loop left] node  {} (C1);
+	\path (D1)  edge[loop left] node  {} (D1);
+
+	\path (E)  edge[loop left] node  {} (E);
+	\path (F)  edge[in=245,out=215, loop] node  {} (F);
+	
+ 
+	\path [-] (A) edge node {$$} (B1);
+	\path [-] (A) edge node {$$} (C1);
+	\path [-] (A) edge node {$$} (D1);
+	\path [-] (A) edge node {$$} (A1);
+	\path [-] (B) edge node {$$} (B1);
+	\path [-] (B) edge node {$$} (C1);
+	\path [-] (B) edge node {$$} (D1);
+	\path [-] (B) edge node {$$} (A1);
+	\path [-] (C) edge node {$$} (B1);
+	\path [-] (C) edge node {$$} (C1);
+	\path [-] (C) edge node {$$} (D1);
+	\path [-] (C) edge node {$$} (A1);
+	\path [-] (D) edge node {$$} (B1);
+	\path [-] (D) edge node {$$} (C1);
+	\path [-] (D) edge node {$$} (D1);
+	\path [-] (D) edge node {$$} (A1);
+
+	\path [-] (E) edge node {$$} (F);
+
+	\path [-] (F) edge node {$$} (A1);
+	\path [-] (F) edge node {$$} (B1);
+	\path [-] (F) edge node {$$} (C1);
+	\path [-] (F) edge node {$$} (D1);
+
+	\path [-](T) edge [out=115,in=220] node {} (S11);
+
+	\path [-] (S1) edge node {} (E);
+	\path [-] (S10) edge node {$$} (S11);
+	\path [-] (S11) edge node {$$} (S12);
+	\path [-] (S12) edge node {$$} (S13);
+
+
+\end{scope}
+\end{tikzpicture}
+}
+\end{center}
+
+\end{document}
+
